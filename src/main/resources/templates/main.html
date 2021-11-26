@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Films</h1>
+<div th:if="${not #lists.isEmpty(films)}">
+    <ul th:each="film : ${films}">
+        <li th:text="${film}"></li>
+    </ul>
+</div>
+<form action="/films" method="post">
+    <input type="text" name="date">
+    <button type="submit">Отправить</button>
+</form>
+</body>
+</html>
